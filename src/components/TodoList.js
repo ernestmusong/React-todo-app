@@ -51,6 +51,18 @@ const TodosList = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const setUpdate = (updatedTitle, id) => {
+    setTodos(
+      todos.map((item) => {
+        const res = { ...item };
+        if (item.id === id) {
+          res.title = updatedTitle;
+        }
+        return res;
+      }),
+    );
+  };
+
   return (
     <>
       <InputTodo addTodoItem={addTodoItem} />
@@ -61,6 +73,7 @@ const TodosList = () => {
             itemProp={todo}
             handleChange={handleChange}
             delTodo={delTodo}
+            setUpdate={setUpdate}
           />
         ))}
       </ul>
