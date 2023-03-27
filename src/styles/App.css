@@ -136,6 +136,12 @@ li > ul {
   margin-right: 10px;
 }
 
+.input-submit svg {
+  color: #5e5e5e;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
 .input-text,
 .input-submit {
   height: 45px;
