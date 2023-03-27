@@ -33,6 +33,13 @@ const TodosList = () => {
       return todo;
     }));
   };
+
+  const delTodo = (id) => {
+    setTodos([
+      ...todos.filter((todo) => todo.id !== id),
+    ]);
+  };
+
   return (
     <ul>
       {todos.map((todo) => (
@@ -40,6 +47,7 @@ const TodosList = () => {
           key={todo.id}
           itemProp={todo}
           handleChange={handleChange}
+          delTodo={delTodo}
         />
       ))}
     </ul>
@@ -47,7 +55,7 @@ const TodosList = () => {
 };
 
 const TodoItem = (props) => {
-  const { itemProp, handleChange } = props;
+  const { itemProp, handleChange, delTodo } = props;
   return (
     <li>
       <input
@@ -55,7 +63,9 @@ const TodoItem = (props) => {
         checked={itemProp.completed}
         onChange={() => handleChange(itemProp.id)}
       />
+      <button type="button" onClick={() => delTodo(itemProp.id)}>Delete</button>
       {itemProp.title}
+
     </li>
   );
 };
@@ -63,6 +73,7 @@ const TodoItem = (props) => {
 TodoItem.propTypes = {
   itemProp: PropTypes.oneOfType([PropTypes.object]).isRequired,
   handleChange: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired,
 };
 
 export default TodosList;
