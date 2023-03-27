@@ -1,19 +1,21 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
+import TodoItem from './TodoItem';
+import InputTodo from './InputTodo';
 
 const todosData = [
   {
-    id: 1,
+    id: uuidv4(),
     title: 'Setup development environment',
     completed: true,
   },
   {
-    id: 2,
+    id: uuidv4(),
     title: 'Develop website and add content',
     completed: false,
   },
   {
-    id: 3,
+    id: uuidv4(),
     title: 'Deploy to live server',
     completed: false,
   },
@@ -40,40 +42,30 @@ const TodosList = () => {
     ]);
   };
 
+  const addTodoItem = (title) => {
+    const newTodo = {
+      id: uuidv4(),
+      title,
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
+  };
+
   return (
-    <ul>
-      {todos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          itemProp={todo}
-          handleChange={handleChange}
-          delTodo={delTodo}
-        />
-      ))}
-    </ul>
+    <>
+      <InputTodo addTodoItem={addTodoItem} />
+      <ul>
+        {todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            itemProp={todo}
+            handleChange={handleChange}
+            delTodo={delTodo}
+          />
+        ))}
+      </ul>
+    </>
   );
-};
-
-const TodoItem = (props) => {
-  const { itemProp, handleChange, delTodo } = props;
-  return (
-    <li>
-      <input
-        type="checkbox"
-        checked={itemProp.completed}
-        onChange={() => handleChange(itemProp.id)}
-      />
-      <button type="button" onClick={() => delTodo(itemProp.id)}>Delete</button>
-      {itemProp.title}
-
-    </li>
-  );
-};
-
-TodoItem.propTypes = {
-  itemProp: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  handleChange: PropTypes.func.isRequired,
-  delTodo: PropTypes.func.isRequired,
 };
 
 export default TodosList;
