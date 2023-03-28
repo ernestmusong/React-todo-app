@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 import useOnClickOutside from './useOnClickOutside';
 
 const Navbar = () => {
@@ -8,8 +9,9 @@ const Navbar = () => {
   return (
     <nav>
       <ul>
-        <li>Home</li>
-        <li>About</li>
+        <li><NavLink className="nav-link" to="/">Home</NavLink></li>
+        <li><NavLink className="nav-link" to="about">About</NavLink></li>
+        <li><NavLink className="nav-link" to="modal">Modal</NavLink></li>
         <li ref={ref}>
           <button type="button" onClick={() => setDropdown((prev) => !prev)}>
             Services

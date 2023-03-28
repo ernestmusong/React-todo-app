@@ -17,16 +17,26 @@ body {
 nav {
   height: 58px;
   top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 nav > ul {
   display: flex;
   align-items: center;
   list-style: none;
-  margin: 0 auto;
-  height: 58px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  height: 100%;
   color: #212529;
+}
+
+.active {
+  color: #8a4baf;
 }
 
 li {
@@ -34,6 +44,12 @@ li {
   font-size: 14px;
   padding: 0.7rem 1rem;
   cursor: pointer;
+}
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
 }
 
 li button {
@@ -154,4 +170,12 @@ li > ul {
   color: red;
   margin-top: 5px;
   display: block;
+}
+
+/* ---------------------------------------MEDIA QUERIES */
+
+@media (min-width: 768px) {
+  nav {
+    justify-content: flex-start;
+  }
 }
