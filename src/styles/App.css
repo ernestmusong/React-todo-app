@@ -176,6 +176,6 @@ li > ul {
 
 @media (min-width: 768px) {
   nav {
-     justify-content: flex-start;
+    justify-content: flex-start;
   }
 }
