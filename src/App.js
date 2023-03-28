@@ -1,19 +1,22 @@
 import './styles/App.css';
-import Header from 'components/Header';
-import TodosLogic from 'components/TodosLogic';
-import Navbar from 'components/Navbar';
-import Modal from 'components/Modal';
+import { Route, Routes } from 'react-router-dom';
+import Home from 'routes/Home';
+import About from 'routes/About';
+import Error from 'routes/Error';
+import Modal from 'routes/Modal';
+import SinglePage from 'routes/SinglePage';
+import Layout from 'components/Layout';
 
 const App = () => (
-  <>
-    <Navbar />
-    <Modal />
-    <div className="wrapper">
-      <div className="todos">
-        <Header />
-        <TodosLogic />
-      </div>
-    </div>
-  </>
+  <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />}>
+        <Route path=":slug" element={<SinglePage />} />
+      </Route>
+      <Route path="modal" element={<Modal />} />
+      <Route path="*" element={<Error />} />
+    </Route>
+  </Routes>
 );
 export default App;
