@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.4;
+  color: #000;
+  background: #fff;
+  font-weight: 400;
+}
+
+/* -------------------------------------------NAVBAR */
+
+nav {
+  height: 58px;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  color: #212529;
+}
+
+.active {
+  color: #8a4baf;
+}
+
+li {
+  position: relative;
+  font-size: 14px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+}
+
+li button {
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  background-color: transparent;
+}
+
+li > ul {
+  position: absolute;
+  right: 0;
+  top: 46px;
+  left: auto;
+  box-shadow:
+    0 10px 15px -3px rgba(46, 41, 51, 0.08),
+    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  font-size: 0.875rem;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+/* -------------------------------------------------------MODAL */
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  gap: 1em;
+}
+
+.open {
+  cursor: pointer;
+}
+
+.modalContent {
+  position: relative;
+  background: #d5d5d5;
+  width: 500px;
+  height: 200px;
+  max-width: 100%;
+  color: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent .close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------TODO */
+
+.wrapper {
+  width: 100%;
+  padding: 4rem 20px 3rem;
+}
+
+.todos {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: flex;
+  border-radius: calc(0.1 * 100px);
+  box-shadow: 0 4px 14px 0 rgba(70, 70, 70, 0.38);
+  justify-content: space-around;
+  background: #fff;
+  font-size: 1rem;
+}
+
+.input-text {
+  width: 85%;
+  padding-right: 5px;
+  padding-left: 10px;
+  border-radius: calc(0.5 * 100px);
+  font-size: 1rem;
+}
+
+.input-text::placeholder {
+  color: #000;
+}
+
+.input-submit {
+  background: transparent;
+  color: #5b5b5b;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.input-submit svg {
+  color: #5e5e5e;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.input-text,
+.input-submit {
+  height: 45px;
+  outline: none;
+  border: none;
+}
+
+.submit-warning {
+  font-size: 13px;
+  color: red;
+  margin-top: 5px;
+  display: block;
+}
+
+/* ---------------------------------------MEDIA QUERIES */
+
+@media (min-width: 768px) {
+  nav {
+    justify-content: flex-start;
+  }
+}
