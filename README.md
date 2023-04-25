@@ -24,7 +24,7 @@
 
 # 📖 [React todo app] <a name="about-project"></a>
 
-**[React todo app]** is a project at <a href='https://www.microverse.org/'>Microverse</a> module three. This app lets you add, edit, delete and item. It also contains a navigation
+**[React todo app]** is a project at <a href='https://www.microverse.org/'>Microverse</a> module three. This app lets users add, edit, and delete an item. It also contains a navigation
 bar that reders dynamic content.
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -71,7 +71,7 @@ sh
 
 - GitHub: [@ernestmusong](https://github.com/ernestmusong)
 - Twitter: [@MusongAkeh](https://twitter.com/MusongAkeh)
-- LinkedIn: [Musong Ernest](https://www.linkedin.com/in/musong-ernest-akeh-921b73211/)
+- LinkedIn: [Musong Ernest](https://www.linkedin.com/in/musongernestakeh/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,7 +87,7 @@ sh
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ernestmusong/Math-Magicians/issues).
+Feel free to check the [issues page](https://github.com/ernestmusong/React-todo-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
